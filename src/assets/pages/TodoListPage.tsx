@@ -1,8 +1,11 @@
+import TodoHeader from "../components/TodoHeader";
+import TodoInput from "../components/TodoInput";
+
 const TodoListPage = () => {
   return (
     <>
-      <div>TodoHeader</div>
-      <div>TodoInput</div>
+      <TodoHeader />
+      <TodoInput />
       <div>TodoList</div>
     </>
   );
