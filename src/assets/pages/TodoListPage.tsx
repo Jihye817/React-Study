@@ -33,7 +33,7 @@ const TodoListPage = () => {
 
   const onCreate = (content: string) => {
     const newItem = {
-      id: 2,
+      id: idRef.current,
       content,
       isDone: false,
       createdDate: new Date().getTime(),
