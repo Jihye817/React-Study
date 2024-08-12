@@ -3,6 +3,7 @@ import TodoItem from "./TodoItem";
 const TodoList = (props: {
   todo: { id: number; isDone: boolean; content: string; createdDate: number }[];
   onDelete: (targetId: number) => void;
+  onUpdate: (targetId: number) => void;
 }) => {
   return (
     <div className="todo_list_container">
@@ -10,7 +11,12 @@ const TodoList = (props: {
       <input placeholder="검색어를 입력하세요" />
       <div>
         {props.todo.map((item) => (
-          <TodoItem key={item.id} {...item} onDelete={props.onDelete} />
+          <TodoItem
+            key={item.id}
+            {...item}
+            onDelete={props.onDelete}
+            onUpdate={props.onUpdate}
+          />
         ))}
       </div>
     </div>

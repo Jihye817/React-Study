@@ -47,12 +47,23 @@ const TodoListPage = () => {
     setTodo(todo.filter((item) => item.id !== targetId));
   };
 
+  const onUpdate = (targetId: number) => {
+    setTodo(
+      todo.map((item) =>
+        item.id === targetId ? { ...item, isDone: !item.isDone } : item
+      )
+      // todo.map(function (item) {
+      //   return item.id === targetId ? { ...item, isDone: !item.isDone } : item;
+      // })
+    );
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <div className="todo_container">
         <TodoHeader />
         <TodoInput onCreate={onCreate} />
-        <TodoList todo={todo} onDelete={onDelete} />
+        <TodoList todo={todo} onDelete={onDelete} onUpdate={onUpdate}/>
       </div>
     </ThemeProvider>
   );

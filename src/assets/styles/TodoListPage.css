@@ -12,11 +12,25 @@
 .header_container {
   text-align: left;
 }
+.header_container h2 {
+  margin: 0;
+  margin-bottom: 20px;
+}
+.header_date {
+  display: flex;
+}
+.header_primary {
+  margin-left: 10px;
+  color: #1a82e4;
+}
 
 .todo_input_container {
   text-align: left;
 }
-.todo_input_wrap{
+.todo_input_container h4 {
+  margin-top: 0;
+}
+.todo_input_wrap {
   display: flex;
   width: 100%;
 }
@@ -28,7 +42,7 @@
   padding: 15px;
 }
 
-.todo_list_container{
+.todo_list_container {
   text-align: left;
 }
 .todo_list_container input {

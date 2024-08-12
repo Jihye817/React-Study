@@ -7,14 +7,18 @@ const TodoItem = (props: {
   content: string;
   createdDate: number;
   onDelete: (targetId: number) => void;
+  onUpdate: (targetId: number) => void;
 }) => {
   const onClickDelete = () => {
     props.onDelete(props.id);
   };
+  const onChangeCheck = () => {
+    props.onUpdate(props.id);
+  };
 
   return (
     <div className="todo_item_wrap">
-      <Checkbox />
+      <Checkbox onClick={onChangeCheck} checked={props.isDone} />
       <div>{props.content}</div>
       <div>{new Date(props.createdDate).toLocaleDateString()}</div>
       <Button
