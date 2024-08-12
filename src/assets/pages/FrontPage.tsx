@@ -18,7 +18,6 @@ const FrontPage = () => {
       <Button
         variant="contained"
         disableElevation
-        color="primary"
         onClick={todo}
       >
         📅 Todo 어플 제작

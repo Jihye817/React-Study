@@ -1,0 +1,53 @@
+.todo_container {
+  max-width: 500px;
+  width: 100%;
+  border: 1px solid #cfcfcf;
+  border-radius: 2%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header_container {
+  text-align: left;
+}
+
+.todo_input_container {
+  text-align: left;
+}
+.todo_input_wrap{
+  display: flex;
+  width: 100%;
+}
+.todo_input_container input {
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+  width: 100%;
+  margin-right: 10px;
+  padding: 15px;
+}
+
+.todo_list_container{
+  text-align: left;
+}
+.todo_list_container input {
+  margin-bottom: 15px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #dadada;
+  padding: 15px 0px;
+}
+
+.todo_item_wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  align-items: center;
+  border-bottom: 1px solid #dadada;
+}
+
+.btn_grey {
+  color: #fff !important;
+  background-color: #929292 !important;
+}
