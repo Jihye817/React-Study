@@ -8,19 +8,22 @@ const FrontPage = () => {
   const todo = () => {
     nav("/todo");
   };
-  
+
+  const news = () => {
+    nav("/news");
+  };
+
   return (
     <>
       <div>
         <img src={reactLogo} className="logo react" alt="React logo" />
       </div>
       <div className="title_text">리액트 공부 정리</div>
-      <Button
-        variant="contained"
-        disableElevation
-        onClick={todo}
-      >
+      <Button variant="contained" disableElevation onClick={todo}>
         📅 Todo 어플 제작
+      </Button>
+      <Button variant="contained" disableElevation onClick={news}>
+        📰 뉴스 뷰어 제작
       </Button>
     </>
   );
