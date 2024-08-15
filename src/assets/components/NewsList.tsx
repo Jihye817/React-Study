@@ -1,4 +1,9 @@
+import { css } from "@emotion/react";
 import NewsItem from "./NewsItem";
+
+const newsListContainer = css`
+  width: 100%;
+`
 
 const NewsList = (props: {
   news: {
@@ -18,9 +23,9 @@ const NewsList = (props: {
 }) => {
   return (
     <>
-      <div>
+      <div css={newsListContainer}>
         {props.news.totalResults !== 0 &&
-          props.news.articles.map((item) => <NewsItem />)}
+          props.news.articles.map((item) => <NewsItem articles={item} />)}
       </div>
     </>
   );
