@@ -1,9 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 
-export default function usePromise(promiseCreator, deps: string[]) {
+type PromiseCreator = () => Promise<any>;
+
+export default function usePromise(
+  promiseCreator: PromiseCreator,
+  deps: any[]
+) {
   const [loading, setLoading] = useState(false);
-  const [resolved, setResolved] = useState(null);
-  const [error, setError] = useState("");
+  const [resolved, setResolved] = useState<any>(null);
+  const [error, setError] = useState<any>(null);
 
   useEffect(() => {
     const process = async () => {
@@ -12,7 +18,7 @@ export default function usePromise(promiseCreator, deps: string[]) {
         const resolved = await promiseCreator();
         setResolved(resolved);
       } catch (e) {
-        if (e instanceof Error) setError(e.message);
+        if (e instanceof Error) setError(e);
       }
       setLoading(false);
     };
