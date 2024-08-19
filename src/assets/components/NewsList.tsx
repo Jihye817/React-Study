@@ -3,7 +3,7 @@ import NewsItem from "./NewsItem";
 
 const newsListContainer = css`
   width: 100%;
-`
+`;
 
 const NewsList = (props: {
   news: {
@@ -25,7 +25,9 @@ const NewsList = (props: {
     <>
       <div css={newsListContainer}>
         {props.news.totalResults !== 0 &&
-          props.news.articles.map((item) => <NewsItem articles={item} />)}
+          props.news.articles.map((item) => (
+            <NewsItem articles={item} key={item.url} />
+          ))}
       </div>
     </>
   );
