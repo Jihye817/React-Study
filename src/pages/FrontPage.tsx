@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import reactLogo from "../react.svg";
+import reactLogo from "../assets/react.svg"
 
 const FrontPage = () => {
   const nav = useNavigate();
@@ -10,7 +10,7 @@ const FrontPage = () => {
   };
 
   const news = () => {
-    nav("/news");
+    nav("/news/all");
   };
 
   return (

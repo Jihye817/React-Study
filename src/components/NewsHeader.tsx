@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { NavLink } from "react-router-dom";
 
 const categories = [
   { name: "all", text: "전체보기" },
@@ -22,26 +23,28 @@ const newsCategoryBlock = css`
       color: #1a9b70;
     }
   }
-    .active {
-      color: #1a9b70;
-      border-bottom: 2px solid #1a9b70;
-    }
+  .active {
+    text-decoration: none;
+    color: #1a9b70;
+    border-bottom: 2px solid #1a9b70;
+  }
+  .nav_style {
+    text-decoration: none;
+    color: black;
+  }
 `;
 
-const NewsHeader = (props: {
-  category: string;
-  onSelect: (category: string) => void;
-}) => {
+const NewsHeader = () => {
   return (
     <div css={newsCategoryBlock}>
       {categories.map((c) => (
-        <div
+        <NavLink
+          className={({ isActive }) => (isActive ? "active" : "nav_style")}
+          to={c.name === "all" ? "/news/all" : `/news/${c.name}`}
           key={c.name}
-          className={props.category === c.name ? "active" : "" }
-          onClick={() => props.onSelect(c.name)}
         >
-          {c.text}
-        </div>
+          <div key={c.name}>{c.text}</div>
+        </NavLink>
       ))}
     </div>
   );
