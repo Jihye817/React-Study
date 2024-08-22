@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import reactLogo from "../assets/react.svg"
+import reactLogo from "../assets/react.svg";
 
 const FrontPage = () => {
   const nav = useNavigate();
@@ -11,6 +11,9 @@ const FrontPage = () => {
 
   const news = () => {
     nav("/news/all");
+  };
+  const color = () => {
+    nav("/color");
   };
 
   return (
@@ -24,6 +27,9 @@ const FrontPage = () => {
       </Button>
       <Button variant="contained" disableElevation onClick={news}>
         📰 뉴스 뷰어 제작
+      </Button>
+      <Button variant="contained" disableElevation onClick={color}>
+        🖌️ 컬러 박스
       </Button>
     </>
   );
