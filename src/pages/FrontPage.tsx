@@ -12,8 +12,13 @@ const FrontPage = () => {
   const news = () => {
     nav("/news/all");
   };
+
   const color = () => {
     nav("/color");
+  };
+
+  const counter = () => {
+    nav("/counter");
   };
 
   return (
@@ -30,6 +35,9 @@ const FrontPage = () => {
       </Button>
       <Button variant="contained" disableElevation onClick={color}>
         🖌️ 컬러 박스
+      </Button>
+      <Button variant="contained" disableElevation onClick={counter}>
+        🧮 카운터 박스
       </Button>
     </>
   );
